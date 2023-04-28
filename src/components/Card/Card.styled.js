@@ -23,4 +23,6 @@ export const FollowWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 26px;
+  justify-content: center;
+  align-items: center;
 `;
