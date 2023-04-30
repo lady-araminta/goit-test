@@ -23,5 +23,12 @@ export const AvatarWrap = styled.div`
     inset 0px -2.19582px 4.39163px #ae7be3,
     inset 0px 4.39163px 3.29372px #fbf8ff;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
-export const Avatar = styled.img``;
+export const Avatar = styled.img`
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+`;

@@ -1,11 +1,11 @@
 import { Amount } from 'components/Amount/Amount';
 import { InfoCont } from './Infoblock.styled';
 
-export const InfoBlock = () => {
+export const InfoBlock = ({ tweets, followers }) => {
   return (
     <InfoCont>
-      <Amount>777 tweets</Amount>
-      <Amount>100500 Followers</Amount>
+      <Amount>{tweets} tweets</Amount>
+      <Amount>{followers} Followers</Amount>
     </InfoCont>
   );
 };

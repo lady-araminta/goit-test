@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardStyled = styled.div`
+export const CardStyled = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;

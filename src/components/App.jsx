@@ -1,19 +1,14 @@
-import { Card } from "./Card/Card";
+// import { Card } from "./Card/Card";
+import { CardGallery } from "./CardGallery/CardGallery";
+import { Container } from "./Container/Container";
 import { GlobalStyle } from "./GlobalStyle";
 
 export const App = () => {
   return (
     <>
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Card/>
-      </div>
+      <Container>
+        <CardGallery/>
+      </Container>
       <GlobalStyle/>
     </>
   );

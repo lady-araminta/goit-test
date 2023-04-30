@@ -6,14 +6,14 @@ import { MainImg } from 'components/MainImg/MainImg';
 import { InfoBlock } from 'components/InfoBlock/InfoBlock';
 import { BtnFollowing } from 'components/Buttons/BtnFollowing/BtnFollowing';
 
-export const Card = () => {
+export const Card = ({ id, user, avatar, tweets, followers }) => {
   return (
-    <CardStyled>
+    <CardStyled key={id}>
       <Logo />
       <MainImg />
-      <AvatarBlock />
+      <AvatarBlock avatar={avatar} user={user} />
       <FollowWrap>
-        <InfoBlock />
+        <InfoBlock tweets={tweets} followers={followers} />
         <BtnFollowing />
       </FollowWrap>
     </CardStyled>

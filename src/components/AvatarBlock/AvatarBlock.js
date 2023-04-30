@@ -5,12 +5,12 @@ import {
   AvatarWrap,
 } from './AvatarBlock.styled';
 
-export const AvatarBlock = () => {
+export const AvatarBlock = ({ avatar, user }) => {
   return (
     <AvatarBlockCont>
       <AvatarLine />
       <AvatarWrap>
-        <Avatar />
+        <Avatar src={avatar} alt={user} />
       </AvatarWrap>
       <AvatarLine />
     </AvatarBlockCont>
