@@ -1,17 +1,11 @@
-import { createStore } from 'redux';
-import { devToolsEnhancer } from '@redux-devtools/extension';
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
+import { usersReducer } from './users/usersSlice';
 
-import { users } from '../utils/users';
+const appReducer = combineReducers({
+  users: usersReducer,
+});
 
-const initialState = {
-  users: users,
-  filters: {
-    status: 'all',
-  },
-};
-const rootReducer = (state = initialState, action) => {
-  return state;
-};
-
-const enhancer = devToolsEnhancer();
-export const store = createStore(rootReducer, enhancer);
+export const store = configureStore({
+  reducer: appReducer,
+});

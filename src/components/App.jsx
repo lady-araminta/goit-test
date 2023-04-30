@@ -1,14 +1,17 @@
-// import { Card } from "./Card/Card";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { CardGallery } from "./CardGallery/CardGallery";
 import { Container } from "./Container/Container";
-import { Filter } from "./Filter/Filter";
 import { GlobalStyle } from "./GlobalStyle";
+import { fetchUsers } from "redux/users/usersOperations";
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => { dispatch(fetchUsers()) }, [dispatch]);
+
   return (
     <>
       <Container>
-        <Filter/>
         <CardGallery/>
       </Container>
       <GlobalStyle/>
