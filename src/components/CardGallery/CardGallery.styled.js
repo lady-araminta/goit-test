@@ -13,3 +13,10 @@ export const List = styled.ul`
     margin-bottom: 16px;
   }
 `;
+
+export const BtnWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+`;

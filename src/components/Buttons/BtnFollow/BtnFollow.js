@@ -1,9 +1,9 @@
 import { BtnBody, BtnText } from './BtnFollow.styled';
 
-export const BtnFollow = () => {
+export const BtnFollow = ({ children }) => {
   return (
     <BtnBody type="button">
-      <BtnText>Follow</BtnText>
+      <BtnText>{children}</BtnText>
     </BtnBody>
   );
 };
