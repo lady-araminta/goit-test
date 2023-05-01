@@ -13,8 +13,6 @@ export const CardGallery = ({ visibleUsers }) => {
 
   const handleClick = () => {
     setCardsPerPage(cardsPerPage + 3);
-    console.log('клик');
-    console.log(cardsPerPage);
   };
 
   return (
@@ -32,8 +30,8 @@ export const CardGallery = ({ visibleUsers }) => {
             />
           ))}
       </List>
-      <BtnWrap>
-        <BtnFollow handleClick={handleClick}>load more</BtnFollow>
+      <BtnWrap onClick={handleClick}>
+        <BtnFollow>load more</BtnFollow>
       </BtnWrap>
     </>
   );
