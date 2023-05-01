@@ -19,10 +19,10 @@ export const CardStyled = styled.li`
   border-radius: 20px;
 `;
 
-export const FollowWrap = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 26px;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
+  gap: 88px;
 `;
+export const BtnWrap = styled.div``;

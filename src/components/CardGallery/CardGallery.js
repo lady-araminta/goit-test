@@ -5,14 +5,14 @@ import { BtnFollow } from 'components/Buttons/BtnFollow/BtnFollow';
 
 export const CardGallery = ({ visibleUsers }) => {
   const [cardsPerPage, setCardsPerPage] = useState(
-    Number(localStorage.getItem('cardsPerPage')) || 3
+    Number(localStorage.getItem('cardsPerPage')) || 6
   );
   useEffect(() => {
     localStorage.setItem('cardsPerPage', cardsPerPage);
   }, [cardsPerPage]);
 
   const handleClick = () => {
-    setCardsPerPage(cardsPerPage + 3);
+    setCardsPerPage(cardsPerPage + 6);
   };
 
   return (

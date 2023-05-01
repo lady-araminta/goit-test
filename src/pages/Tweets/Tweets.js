@@ -9,7 +9,8 @@ import { fetchUsers } from 'utils/api';
 
 const getfilteredUsers = (users, filter) => {
   return users.filter(user => {
-    const isFollowing = localStorage.getItem(`following-${user.id}`) === 'true';
+    const isFollowing =
+      localStorage.getItem(`subscribed-${user.user}`) === 'true';
     switch (filter) {
       case 'follow':
         return !isFollowing;
