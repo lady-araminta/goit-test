@@ -1,48 +1,39 @@
+import { useEffect, useState } from 'react';
 import { Card } from 'components/Card/Card';
-import { List, BtnWrap } from './CardGallery.styled';
-// import { useEffect, useState } from 'react';
-// import { fetchUsers } from 'utils/api';
-// import { BtnLoadMore } from 'components/Buttons/BtnLoadMore/BtnLoadMore';
-import { users } from 'utils/users';
+import { BtnWrap, List } from './CardGallery.styled';
 import { BtnFollow } from 'components/Buttons/BtnFollow/BtnFollow';
 
-export const CardGallery = () => {
-  // const [users, setUsers] = useState([]);
-  // const [perPage, setPerPage] = useState(1);
-  // const [moreCards, setMoreCards] = useState(true);
+export const CardGallery = ({ visibleUsers }) => {
+  const [cardsPerPage, setCardsPerPage] = useState(
+    Number(localStorage.getItem('cardsPerPage')) || 3
+  );
+  useEffect(() => {
+    localStorage.setItem('cardsPerPage', cardsPerPage);
+  }, [cardsPerPage]);
 
-  // const getTweets = async () => {
-  //   try {
-  //     const data = await fetchUsers();
-  //     setUsers(prevUsers => [...prevUsers, ...data]);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getTweets();
-  // }, [perPage]);
-
-  // const handleClick = () => {
-  //   setPerPage(prevPage => prevPage + 1);
-  // };
+  const handleClick = () => {
+    setCardsPerPage(cardsPerPage + 3);
+    console.log('клик');
+    console.log(cardsPerPage);
+  };
 
   return (
     <>
       <List>
-        {users.map(({ id, user, avatar, tweets, followers }) => (
-          <Card
-            key={id}
-            user={user}
-            avatar={avatar}
-            tweets={tweets}
-            followers={followers}
-          />
-        ))}
+        {visibleUsers
+          .slice(0, cardsPerPage)
+          .map(({ id, user, avatar, tweets, followers }) => (
+            <Card
+              key={id}
+              user={user}
+              avatar={avatar}
+              tweets={tweets}
+              followers={followers}
+            />
+          ))}
       </List>
       <BtnWrap>
-        <BtnFollow>load more</BtnFollow>
+        <BtnFollow handleClick={handleClick}>load more</BtnFollow>
       </BtnWrap>
     </>
   );

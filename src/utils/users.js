@@ -5,7 +5,7 @@ export const users = [
     avatar:
       'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/956.jpg',
     tweets: 47,
-    followers: 34,
+    followers: 100500,
     id: '1',
   },
   {
